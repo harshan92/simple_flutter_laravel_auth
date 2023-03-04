@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:frontend/screen/home.dart';
+import 'package:frontend/screen/login.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 void main() {
@@ -44,15 +46,16 @@ class _CheckAuthState extends State<CheckAuth> {
     super.initState();
   }
 
-  void _checkIfLoggedIn() async{
+  void _checkIfLoggedIn() async {
     SharedPreferences localStorage = await SharedPreferences.getInstance();
     var token = localStorage.getString('token');
-    if(token != null){
+    if (token != null) {
       setState(() {
         isAuth = true;
       });
     }
   }
+
   @override
   Widget build(BuildContext context) {
     Widget child;

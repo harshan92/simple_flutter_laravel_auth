@@ -1,5 +1,7 @@
 import 'dart:convert';
 import 'package:flutter/material.dart';
+import 'package:frontend/screen/home.dart';
+import 'package:frontend/screen/login.dart';
 
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -62,7 +64,7 @@ class _RegisterState extends State<Register> {
                                       fontWeight: FontWeight.normal),
                                 ),
                                 validator: (emailValue) {
-                                  if (emailValue.isEmpty) {
+                                  if (emailValue!.isEmpty) {
                                     return 'Please enter email';
                                   }
                                   email = emailValue;
@@ -85,7 +87,7 @@ class _RegisterState extends State<Register> {
                                       fontWeight: FontWeight.normal),
                                 ),
                                 validator: (firstname) {
-                                  if (firstname.isEmpty) {
+                                  if (firstname!.isEmpty) {
                                     return 'Please enter your first name';
                                   }
                                   fname = firstname;
@@ -185,7 +187,7 @@ class _RegisterState extends State<Register> {
                                   //     borderRadius:
                                   //     new BorderRadius.circular(20.0)),
                                   onPressed: () {
-                                    if (_formKey.currentState.validate()) {
+                                    if (_formKey.currentState!.validate()) {
                                         _register();
                                     }
                                   },
